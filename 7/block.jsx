@@ -1,5 +1,7 @@
 import React from 'react';
 
+var interval;
+
 class Block extends React.Component {
 
     constructor() {
@@ -18,19 +20,24 @@ class Block extends React.Component {
     render() {
         console.log('rendering');
         return (
-            <button onClick={this.update.bind(this)}>{this.state.value}</button>
+            <button onClick={this.update.bind(this)}>{this.state.value * this.state.multiplier}</button>
         );
     }
 
     componentWillMount() {
+        this.setState({
+            multiplier: 2
+        });
         console.log('mounting');
     }
 
     componentDidMount() {
+        interval = setInterval(this.update.bind(this), 500);
         console.log('mounted');
     }
 
     componentWillUnmount() {
+        clearInterval(interval);
         console.log('unmounted');
     }
 }
