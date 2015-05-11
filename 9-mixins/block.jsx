@@ -9,12 +9,6 @@ class Block extends React.Component {
         this.initialStateFromMixin();
     }
 
-    increaseCounter() {
-        this.setState({
-            count: ++this.state.count
-        });
-    }
-
     render() {
         return (
             <button onClick={this.increaseCounter.bind(this)}>{this.props.text} = {this.state.count} </button>
