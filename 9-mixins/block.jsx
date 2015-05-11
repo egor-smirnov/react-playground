@@ -4,9 +4,14 @@ import testMixin from './testMixin';
 
 class Block extends React.Component {
 
+    constructor() {
+        super();
+        this.initialStateFromMixin();
+    }
+
     increaseCounter() {
         this.setState({
-            count: this.state.count++
+            count: ++this.state.count
         });
     }
 

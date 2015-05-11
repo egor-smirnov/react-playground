@@ -4,11 +4,6 @@ import Label from './label';
 
 class HelloWorld extends React.Component {
 
-    constructor() {
-        super();
-        this.initialStateFromMixin();
-    }
-
     render() {
         return (
             <div>
