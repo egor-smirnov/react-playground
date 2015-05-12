@@ -2,6 +2,8 @@ import React from 'react';
 import reactMixin from 'react-mixin';
 import testMixin from './testMixin';
 
+@reactMixin.decorate(testMixin)
+
 class Block extends React.Component {
 
     constructor() {
@@ -15,7 +17,5 @@ class Block extends React.Component {
         );
     }
 }
-
-reactMixin(Block.prototype, testMixin);
 
 export default Block;

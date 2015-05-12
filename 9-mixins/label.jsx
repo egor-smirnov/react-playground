@@ -2,6 +2,8 @@ import React from 'react';
 import reactMixin from 'react-mixin';
 import testMixin from './testMixin';
 
+@reactMixin.decorate(testMixin)
+
 class Label extends React.Component {
 
     constructor() {
@@ -19,7 +21,5 @@ class Label extends React.Component {
         );
     }
 }
-
-reactMixin(Label.prototype, testMixin);
 
 export default Label;

@@ -9,7 +9,9 @@ gulp.task('build', function () {
         extensions: ['.jsx'],
         debug: true
     })
-        .transform(babelify)
+        .transform(babelify.configure({
+            stage: 0
+        }))
         .bundle()
         .pipe(source('bundle.js'))
         .pipe(gulp.dest('dist'));
